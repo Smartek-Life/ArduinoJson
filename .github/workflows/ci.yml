@@ -412,7 +412,7 @@ jobs:
       - name: Build
         run: ninja
       - name: Memcheck
-        run: ctest -LE WillFail -T memcheck
+        run: ctest -LE WillFail -T memcheck --rerun-failed --output-on-failure
         id: memcheck
       - name: MemoryChecker.*.log
         run: cat Testing/Temporary/MemoryChecker.*.log
